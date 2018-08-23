@@ -1,5 +1,5 @@
 const db = require('../config/db.config.js');
-const Position = db.positions;
+const Position = db.position;
  
 exports.create = (req, res) => {	
 	Position.create({  

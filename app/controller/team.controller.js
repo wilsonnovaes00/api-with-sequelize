@@ -1,5 +1,5 @@
 const db = require('../config/db.config.js');
-const Team = db.teams;
+const Team = db.team;
 
 exports.create = (req, res) => {	
 	Team.create({  

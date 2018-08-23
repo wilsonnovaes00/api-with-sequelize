@@ -5,10 +5,10 @@ app.use(bodyParser.json())
  
 const db = require('./config/db.config.js');
   
-db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync with { force: true }');
-});
- 
+// db.sequelize.sync({force: true}).then(() => {
+//   console.log('Drop and Resync with { force: true }');
+// });
+
 require('./route/player.route.js')(app);
 require('./route/team.route.js')(app);
 require('./route/position.route.js')(app);

@@ -14,15 +14,21 @@ const sequelize = new Sequelize(env.database, env.username, env.password, {
   }
 });
  
-const db = {};
+const db = {
+  player: sequelize.import('../models/player.model.js'),
+  team: sequelize.import('../models/team.model.js'),
+  position: sequelize.import('../models/position.model.js')
+
+};
  
+
+Object.keys(db).forEach((modelName) => {
+  if ('associate' in db[modelName]) {
+    db[modelName].associate(db);
+  }
+});
+
 db.Sequelize = Sequelize;
-db.sequelize = sequelize;
- 
-//Models/tables
-db.players = require('../models/player.model.js')(sequelize, Sequelize);
-db.teams = require('../models/team.model.js')(sequelize, Sequelize);
-db.positions = require('../models/position.model.js')(sequelize, Sequelize);
- 
+db.sequelize = sequelize; 
  
 module.exports = db;

@@ -3,6 +3,7 @@ const env = {
     username: 'sa',
     password: 'P@55w0rd',
     host: 'localhost',
+    dialectModulePath: 'sequelize-msnodesqlv8',
     dialect: 'mssql',
     pool: {
         max: 5,

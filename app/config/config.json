@@ -1,0 +1,26 @@
+{
+  "development": {
+    "database": "testdb",
+    "username": "sa",
+    "password": "P@55w0rd",
+    "host": "localhost",
+    "dialectModulePath": "sequelize-msnodesqlv8",
+    "dialect": "mssql"
+  },
+  "test": {
+    "database": "testdb",
+    "username": "sa",
+    "password": "P@55w0rd",
+    "host": "localhost",
+    "dialectModulePath": "sequelize-msnodesqlv8",
+    "dialect": "mssql"
+  },
+  "production": {
+    "database": "testdb",
+    "username": "sa",
+    "password": "P@55w0rd",
+    "host": "localhost",
+    "dialectModulePath": "sequelize-msnodesqlv8",
+    "dialect": "mssql"
+  }
+}
