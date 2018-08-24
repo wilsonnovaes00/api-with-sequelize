@@ -23,17 +23,20 @@ module.exports = (sequelize, Sequelize) => {
 	});
 
 	Player.associate = (models) => {
+		Player.belongsTo(models.position, {
+			foreignKey: 'position_id',
+		});
+		
     	Player.belongsTo(models.team, {
-			foreignKey: 'team_id',
-			as: 'team'
+			foreignKey: 'team_id'
     	});
 	};
 
-	Player.associate = (models) => {
-    	Player.belongsTo(models.position, {
-			foreignKey: 'position_id',
-    	});
-	};
+	// Player.associate = (models) => {
+    // 	Player.belongsTo(models.position, {
+	// 		foreignKey: 'position_id',
+    // 	});
+	// };
 
 
 	return Player;

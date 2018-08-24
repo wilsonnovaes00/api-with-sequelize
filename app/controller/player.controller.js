@@ -15,15 +15,7 @@ exports.create = (req, res) => {
  
 exports.findAll = (req, res) => {
 	Player.findAll({
-		include: [{ 
-			model: db.position,
-			attributes: [] 
-		},
-	{
-			model: db.team,
-			attributes: [] 
-	}],
-		attributes: []
+		include: [{ model: db.position},{ model: db.team, attributes: [nameTeam] }]
 
 	}).then(players => {
 	  res.send(players);
